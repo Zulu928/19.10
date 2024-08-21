@@ -1472,7 +1472,7 @@ void AFortPlayerController::ClientOnPawnDiedHook(AFortPlayerController* PlayerCo
 	{
 		if (Globals::bSpawnCrownOnKill && Globals::SpawnCrown > 0)
 		{
-			if (Globals::AlivePlayers == 1)
+			if (Globals::AlivePlayers == 2)
 			{
 				AFortPlayerStateAthena* LastPlayerState = nullptr;
 				AFortPlayerController* LastPlayerController = nullptr;

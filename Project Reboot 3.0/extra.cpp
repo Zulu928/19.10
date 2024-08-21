@@ -182,7 +182,5 @@ void SetZoneToIndexHook(AFortGameModeAthena* GameModeAthena, int OverridePhaseMa
         {
             LOG_WARN(LogZone, "SafeZoneIndicator is null during skip.");
         }
-
-        UKismetSystemLibrary::ExecuteConsoleCommand(GetWorld(), L"skipsafezone", nullptr);
     }
 }
