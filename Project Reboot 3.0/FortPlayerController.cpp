@@ -1472,7 +1472,7 @@ void AFortPlayerController::ClientOnPawnDiedHook(AFortPlayerController* PlayerCo
 	{
 		if (Globals::bSpawnCrownOnKill && Globals::SpawnCrown > 0)
 		{
-			if (Globals::AlivePlayers == 2)
+			if (Globals::AlivePlayers == 1)
 			{
 				AFortPlayerStateAthena* LastPlayerState = nullptr;
 				AFortPlayerController* LastPlayerController = nullptr;
@@ -1503,10 +1503,10 @@ void AFortPlayerController::ClientOnPawnDiedHook(AFortPlayerController* PlayerCo
 					{
 						static auto CrownSpawn = FindObject<UFortItemDefinition>(L"/VictoryCrownsGameplay/Items/AGID_VictoryCrown.AGID_VictoryCrown");
 
+						LastPlayerState->GetPlayerName().ToString();
 						WorldInventory->AddItem(CrownSpawn, nullptr, Globals::SpawnCrown);
 						//KillerPlayerState->GetPlayerName().ToString();
 						WorldInventory->Update();
-						LastPlayerState->GetPlayerName().ToString();
 
 						LOG_INFO(LogDev, "Crown Given to last player: %s", *LastPlayerState->GetPlayerName().ToString());
 					}
