@@ -36,21 +36,6 @@ void SetZoneToIndexHook(AFortGameModeAthena* GameModeAthena, int OverridePhaseMa
             GameState->Get<int>(GameState_SafeZonePhaseOffset) = NewLateGameSafeZonePhase;
             SetZoneToIndexOriginal(GameModeAthena, OverridePhaseMaybeIDFK);
 
-            if (NewLateGameSafeZonePhase == EndReverseZonePhase)
-            {
-                bZoneReversing = false;
-            }
-
-            if (NewLateGameSafeZonePhase == 1 || NewLateGameSafeZonePhase == 2)
-            {
-                SafeZoneIndicator->SkipShrinkSafeZone();
-            }
-
-            if (NewLateGameSafeZonePhase >= StartReverseZonePhase)
-            {
-                bZoneReversing = false;
-            }
-
             if (bZoneReversing && bEnableReverseZone) NewLateGameSafeZonePhase--;
             else NewLateGameSafeZonePhase++;
 
@@ -124,16 +109,6 @@ void SetZoneToIndexHook(AFortGameModeAthena* GameModeAthena, int OverridePhaseMa
         GameModeAthena->Get<int>(GameMode_SafeZonePhaseOffset) = NewLateGameSafeZonePhase;
         GameState->Get<int>(GameState_SafeZonePhaseOffset) = NewLateGameSafeZonePhase;
         SetZoneToIndexOriginal(GameModeAthena, OverridePhaseMaybeIDFK);
-
-        if (NewLateGameSafeZonePhase == EndReverseZonePhase)
-        {
-            bZoneReversing = false;
-        }
-
-        if (NewLateGameSafeZonePhase >= StartReverseZonePhase)
-        {
-            bZoneReversing = false;
-        }
 
         if (bZoneReversing && bEnableReverseZone) NewLateGameSafeZonePhase--;
         else NewLateGameSafeZonePhase++;

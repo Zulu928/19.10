@@ -29,7 +29,7 @@ namespace Globals
 	extern inline bool bNoMCP = false;
 	extern inline bool bLogProcessEvent = false;
 	extern inline std::atomic<bool> bLateGame(Globals::LateGame);
-	extern inline bool bPlayersForFullMap = 45; // not implemented adam dont touch
+	extern inline bool bPlayersForFullMap = 45;
 
 	extern inline bool bKnockbackfix = true; // dumbass really thought
 	extern inline bool EventForCum = false;
@@ -43,18 +43,17 @@ namespace Globals
 	extern inline bool IsGuiAlive = false;
 	extern inline bool bPlayerJoined = false;
 	extern inline bool bEnoughPlayers = false;
-	extern inline bool bKillAllNiggers = false;
 	extern inline int AlivePlayers = 0;
 	extern inline int AmountOfPlayersWhenBusStart = 0;
 
-	extern inline int bMaxPlayersForLategame = 30; // doesnt work i think
+	extern inline int bMaxPlayersForLategame = 30;
 	extern inline int RequiredPlayers = 2;
 	extern inline int LaunchTimeForBus = 75;
-	extern inline bool bPlayersForRestart = false; // bus stuff
-	extern inline bool bStarting = false; // bus stuff
-	extern inline bool bStarted = false; // bus stuff
-	extern inline bool bEnded = false; // bus stuff
-	extern inline bool bEnded0 = false; // bus stuff
+	extern inline bool bPlayersForRestart = false;
+	extern inline bool bStarting = false;
+	extern inline bool bStarted = false;
+	extern inline bool bEnded = false;
+	extern inline bool bEnded0 = false;
 	extern inline bool bEndedforWebhook = false;
 	extern inline bool bStartedBus = false;
 	extern inline bool bdontworry = true;
@@ -63,7 +62,6 @@ namespace Globals
 	extern inline bool bInfiniteMaterials = false;
 	extern inline bool bInfiniteAmmo = false;
 	extern inline bool bShouldUseReplicationGraph = false;
-	extern inline std::string Gamemode = "";
 
 	extern inline bool bHitReadyToStartMatch = false;
 	extern inline bool bInitializedPlaylist = false;
@@ -73,7 +71,6 @@ namespace Globals
 	extern inline bool bPrivateIPsAreOperator = true;
 	extern inline int AmountOfListens = 0; // TODO: Switch to this for LastNum
 	extern inline bool bDeveloperMode = true;
-	inline std::mutex SumForNiggerTab;
 }
 
 extern inline int NumToSubtractFromSquadId = 0; // I think 2?
