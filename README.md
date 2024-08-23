@@ -1,1 +1,1 @@
-fuck reboot
+f reboot
