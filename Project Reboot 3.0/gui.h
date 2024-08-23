@@ -642,14 +642,14 @@ static inline DWORD WINAPI LateGameThread(LPVOID)
 
 		std::vector<const wchar_t*> ShotgunOptions = {
 			L"/FlipperGameplay/Items/Weapons/BurstShotgun/WID_Shotgun_CoreBurst_Athena_VR.WID_Shotgun_CoreBurst_Athena_VR",
-			L"/FlipperGameplay/Items/Weapons/CoreSniper/WID_Sniper_CoreSniper_Athena_SR.WID_Sniper_CoreSniper_Athena_SR",
+			L"/FlipperGameplay/Items/Weapons/DPSShotgun/WID_Shotgun_CoreDPS_Athena_UC.WID_Shotgun_CoreDPS_Athena_UC",
 			L"/FlipperGameplay/Items/Weapons/BurstShotgun/WID_Shotgun_CoreBurst_Athena_UC.WID_Shotgun_CoreBurst_Athena_UC",
 			L"/FlipperGameplay/Items/Weapons/BurstShotgun/WID_Shotgun_CoreBurst_Athena_R.WID_Shotgun_CoreBurst_Athena_R",
 			L"/FlipperGameplay/Items/Weapons/BurstShotgun/WID_Shotgun_CoreBurst_Athena_C.WID_Shotgun_CoreBurst_Athena_C",
 			L"/FlipperGameplay/Items/Weapons/DPSShotgun/WID_Shotgun_CoreDPS_Athena_UC.WID_Shotgun_CoreDPS_Athena_UC",
 			L"/FlipperGameplay/Items/Weapons/DPSShotgun/WID_Shotgun_CoreDPS_Athena_SR.WID_Shotgun_CoreDPS_Athena_SR",
 			L"/FlipperGameplay/Items/Weapons/BurstShotgun/WID_Shotgun_CoreBurst_Athena_VR.WID_Shotgun_CoreBurst_Athena_VR",
-			L"/FlipperGameplay/Items/Weapons/CoreSniper/WID_Sniper_CoreSniper_Athena_SR.WID_Sniper_CoreSniper_Athena_SR",
+			L"/FlipperGameplay/Items/Weapons/BurstShotgun/WID_Shotgun_CoreBurst_Athena_R.WID_Shotgun_CoreBurst_Athena_R",
 			L"/FlipperGameplay/Items/Weapons/BurstShotgun/WID_Shotgun_CoreBurst_Athena_UC.WID_Shotgun_CoreBurst_Athena_UC",
 			L"/FlipperGameplay/Items/Weapons/BurstShotgun/WID_Shotgun_CoreBurst_Athena_R.WID_Shotgun_CoreBurst_Athena_R",
 		};
@@ -684,10 +684,9 @@ static inline DWORD WINAPI LateGameThread(LPVOID)
 		std::vector<const wchar_t*> ShieldOptions = {
 			L"/Game/Athena/Items/Consumables/Shields/Athena_Shields.Athena_Shields",
 			L"/Game/Athena/Items/Consumables/ShieldSmall/Athena_ShieldSmall.Athena_ShieldSmall",
-			L"/Game/Athena/Items/Consumables/SuperMedkit/Athena_SuperMedkit.Athena_SuperMedkit",
 			L"/Game/Athena/Items/Consumables/Medkit/Athena_Medkit.Athena_Medkit",
 			L"/Game/Athena/Items/Consumables/Bandage/Athena_Bandage.Athena_Bandage"
-			L"/Game/Athena/Items/Consumables/PurpleStuff/Athena_PurpleStuff.Athena_PurpleStuff",
+			L"/FlipperGameplay/Items/PizzaParty/WID_Athena_PizzaSlice.WID_Athena_PizzaSlice",
 			L"/FlipperGameplay/Items/RejuvenationPotion/Athena_RejuvenationPotion.Athena_RejuvenationPotion",
 		};
 
@@ -743,7 +742,7 @@ static inline DWORD WINAPI LateGameThread(LPVOID)
 
 	if (NumPlayers == 1 && Globals::bStartedBus == false)
 	{
-		Globals::LateGame = true;
+		Globals::bLateGame.store(true);
 	}
 
 	if (NumPlayers == 30 && Globals::bStartedBus == false)
@@ -757,10 +756,11 @@ static inline DWORD WINAPI LateGameThread(LPVOID)
 
 		if (MaxPlayersValue > Globals::bMaxPlayersForLategame)
 		{
-			Globals::LateGame = false;
+			Globals::bLateGame.store(false);
 			LOG_WARN(LogLateGame, "full map switched.");
 		}
 	}
+
 
 	static auto SafeZonesStartTimeOffset = GameState->GetOffset("SafeZonesStartTime");
 	GameState->Get<float>(SafeZonesStartTimeOffset) = 0.001f;
