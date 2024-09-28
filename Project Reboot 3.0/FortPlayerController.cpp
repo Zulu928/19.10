@@ -792,7 +792,7 @@ void AFortPlayerController::ServerAttemptAircraftJumpHook(AFortPlayerController*
 	{
 		NewPawnAsFort->SetHealth(100); // needed with server restart player?
 		
-		if (Globals::bLateGame)
+		if (Globals::bStartedBus)
 		{
 			NewPawnAsFort->SetShield(100);
 
@@ -1509,7 +1509,7 @@ void AFortPlayerController::ClientOnPawnDiedHook(AFortPlayerController* PlayerCo
 						//KillerPlayerState->GetPlayerName().ToString();
 						WorldInventory->Update();
 
-						LOG_INFO(LogDev, "Crown Given to last player: %s", *LastPlayerState->GetPlayerName().ToString());
+						//LOG_INFO(LogDev, "Crown Given to last player: %s", *LastPlayerState->GetPlayerName().ToString());
 					}
 				}
 			}

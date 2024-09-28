@@ -12,8 +12,6 @@
 #include <spdlog/sinks/stdout_color_sinks.h>
 #include <filesystem>
 
-// #define ENABLE_SPD_LOG
-
 static inline std::vector<spdlog::sink_ptr> sinks;
 
 enum ELogLevel : uint8_t
@@ -40,26 +38,23 @@ inline void MakeLogger(const std::string& LoggerName)
 inline void InitLogger()
 {
     // FreeConsole();
+    AllocConsole();
     // AttachConsole(ATTACH_PARENT_PROCESS);
 
     FILE* stream = nullptr;
 
-    bool bStopFortniteOutput = false;
+    bool bStopFortniteOutput = true;
 
     if (bStopFortniteOutput)
     {
-        AllocConsole();
-
         freopen_s(&stream, "in.txt", "r", stdin);
         freopen_s(&stream, "out.txt", "w+", stdout);
         freopen_s(&stream, "err.txt", "w", stderr);
     }
 
-    SetConsoleTitleA("Project Reboot 3.0");
-    
-#ifdef ENABLE_SPD_LOG
+    SetConsoleTitleA("19.10");
 
-    std::string logName = "reboot.log"; // GenerateLogFileName();
+    std::string logName = "19.10.log"; // GenerateLogFileName();
 
     sinks.emplace_back(std::make_shared<spdlog::sinks::stdout_color_sink_mt>())->set_pattern("[%D-%T] %n: %^%v%$");
     sinks.emplace_back(std::make_shared<spdlog::sinks::basic_file_sink_mt>(logName, true))->set_pattern("[%D-%T] %n: %l: %v");
@@ -93,10 +88,9 @@ inline void InitLogger()
     MakeLogger("LogRebooting");
     MakeLogger("LogObjectViewer");
     MakeLogger("LogLateGame");
-#endif
+    MakeLogger("LogCommands");
 }
 
-#ifdef ENABLE_SPD_LOG
 #define LOG_DEBUG(loggerName, ...)                                            \
     if (spdlog::get(#loggerName))          \
         spdlog::get(#loggerName)->debug(std::format(__VA_ARGS__));
@@ -112,10 +106,3 @@ inline void InitLogger()
 #define LOG_FATAL(loggerName, ...)                                               \
     if (spdlog::get(#loggerName))             \
         spdlog::get(#loggerName)->critical(std::format(__VA_ARGS__));
-#else
-#define LOG_DEBUG(loggerName, ...)
-#define LOG_INFO(loggerName, ...)
-#define LOG_WARN(loggerName, ...)
-#define LOG_ERROR(loggerName, ...)
-#define LOG_FATAL(loggerName, ...)
-#endif

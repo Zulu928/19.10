@@ -8,7 +8,6 @@ namespace Globals
 {
 	extern inline int NonJoinable = 120;
 	extern inline int SystemEnded = 0;
-
 	extern inline int SystemUptime = 0;
 	extern inline bool LateGame = true;
 	extern inline bool AutoLateGame = true;
@@ -17,12 +16,9 @@ namespace Globals
 	extern inline bool bSpawnCrownOnKill = true;
 	extern inline int SpawnCrown = 1;
 	extern inline int StartingShield = 100;
-
 	extern inline bool bAllowNoGuiMode = true;
-
 	extern inline bool tesplease = false;
 	extern inline bool bSendWebhook = true;
-
 	extern inline bool bCreative = false;
 	extern inline bool bGoingToPlayEvent = false;
 	extern inline bool bEnableAGIDs = true;
@@ -30,8 +26,7 @@ namespace Globals
 	extern inline bool bLogProcessEvent = false;
 	extern inline std::atomic<bool> bLateGame(Globals::LateGame);
 	extern inline bool bPlayersForFullMap = 45;
-
-	extern inline bool bKnockbackfix = true; // dumbass really thought
+	extern inline bool bKnockbackfix = true;
 	extern inline bool EventForCum = false;
 	extern inline bool UPTimeStarted = false;
 	extern inline bool bServerBeforeStarted = false;
@@ -44,11 +39,11 @@ namespace Globals
 	extern inline bool bPlayerJoined = false;
 	extern inline bool bEnoughPlayers = false;
 	extern inline int AlivePlayers = 0;
+	extern inline int MaxMats = 500;
 	extern inline int AmountOfPlayersWhenBusStart = 0;
-
 	extern inline int bMaxPlayersForLategame = 30;
 	extern inline int RequiredPlayers = 2;
-	extern inline int LaunchTimeForBus = 75;
+	extern inline int LaunchTimeForBus = 10;
 	extern inline bool bPlayersForRestart = false;
 	extern inline bool bStarting = false;
 	extern inline bool bStarted = false;

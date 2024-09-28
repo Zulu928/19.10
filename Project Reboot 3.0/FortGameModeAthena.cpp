@@ -293,12 +293,6 @@ void AFortGameModeAthena::OnAircraftEnteredDropZoneHook(AFortGameModeAthena* Gam
 	LOG_INFO(LogDev, "OnAircraftEnteredDropZoneHook!");
 
 	OnAircraftEnteredDropZoneOriginal(GameModeAthena, Aircraft);
-
-	if (Globals::bLateGame.load())
-	{
-		auto GameState = Cast<AFortGameStateAthena>(GameModeAthena->GetGameState());
-		GameState->SkipAircraft();
-	}
 }
 
 void SetupEverythingAI() // find better name lol
