@@ -5,7 +5,7 @@ void SetZoneToIndexHook(AFortGameModeAthena* GameModeAthena, int OverridePhaseMa
 {
 	if (bStartedBus == true)
 	{
-		static auto ZoneDurationsOffset = Fortnite_Version >= 19.10 ? 0x258
+		static auto ZoneDurationsOffset = Fortnite_Version >= 8.51 ? 0x258
 			: 0x248;
 		0x1F8; // S13-S14
 
@@ -164,7 +164,7 @@ void SetZoneToIndexHook(AFortGameModeAthena* GameModeAthena, int OverridePhaseMa
 			break;
 		case 7:
 			HoldDuration = (Phase >= 0 && Phase < ZoneHoldDurations.size()) ? ZoneHoldDurations.at(Phase) : 0.0f;
-			ZoneDuration = (Phase >= 60 && Phase < ZoneDurations.size()) ? ZoneDurations.at(Phase) : 55.0f;
+			ZoneDuration = (Phase >= 55 && Phase < ZoneDurations.size()) ? ZoneDurations.at(Phase) : 55.0f;
 			break;
 		case 8:
 			HoldDuration = (Phase >= 0 && Phase < ZoneHoldDurations.size()) ? ZoneHoldDurations.at(Phase) : 0.0f;
@@ -183,10 +183,8 @@ void SetZoneToIndexHook(AFortGameModeAthena* GameModeAthena, int OverridePhaseMa
 			SafeZoneIndicator->Get<float>(SafeZoneFinishShrinkTimeOffset) = SafeZoneIndicator->Get<float>(SafeZoneStartShrinkTimeOffset) + ZoneDuration;
 		}
 
-		//LOG_INFO(LogZone, "ZoneHoldDuration: {}", holdDuration);
-		//LOG_INFO(LogZone, "ZoneDuration: {}", zoneDuration);
-
-
+		LOG_INFO(LogZone, "ZoneHoldDuration: {}", HoldDuration);
+		LOG_INFO(LogZone, "ZoneDuration: {}", ZoneDuration);
 
 		auto GameMode = Cast<AFortGameModeAthena>(GetWorld()->GetGameMode());
 		static auto SafeZoneLocationsOffset = GameMode->GetOffset("SafeZoneLocations");

@@ -43,10 +43,11 @@ namespace Globals
 	extern inline int AmountOfPlayersWhenBusStart = 0;
 	extern inline int bMaxPlayersForLategame = 30;
 	extern inline int RequiredPlayers = 2;
-	extern inline int LaunchTimeForBus = 10;
+	extern inline int LaunchTimeForBus = 65;
 	extern inline bool bPlayersForRestart = false;
 	extern inline bool bStarting = false;
 	extern inline bool bStarted = false;
+	extern inline bool bZoneReversingEnabled = true;
 	extern inline bool bEnded = false;
 	extern inline bool bEnded0 = false;
 	extern inline bool bEndedforWebhook = false;

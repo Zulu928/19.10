@@ -237,97 +237,36 @@ static inline void KillGameserver()
 	std::system("taskkill /f /im FortniteClient-Win64-Shipping.exe");
 }
 */
-static inline void InitStyle()
-{
+static inline void InitStyle() {
 	ImGuiStyle& style = ImGui::GetStyle();
 
-	style.Alpha = 1.0f;
-	style.DisabledAlpha = 0.1000000014901161f;
-	style.WindowPadding = ImVec2(8.0f, 8.0f);
-	style.WindowRounding = 12.0f;
-	style.WindowBorderSize = 0.0f;
-	style.WindowMinSize = ImVec2(30.0f, 30.0f);
-	style.WindowTitleAlign = ImVec2(0.5f, 0.5f);
-	style.WindowMenuButtonPosition = ImGuiDir_Right;
-	style.ChildRounding = 5.0f;
-	style.ChildBorderSize = 1.0f;
-	style.PopupRounding = 10.0f;
-	style.PopupBorderSize = 0.0f;
-	style.FramePadding = ImVec2(5.0f, 3.5f);
-	style.FrameRounding = 5.0f;
-	style.FrameBorderSize = 0.0f;
-	style.ItemSpacing = ImVec2(5.0f, 4.0f);
-	style.ItemInnerSpacing = ImVec2(5.0f, 5.0f);
-	style.CellPadding = ImVec2(4.0f, 2.0f);
-	style.IndentSpacing = 5.0f;
-	style.ColumnsMinSpacing = 5.0f;
-	style.ScrollbarSize = 15.0f;
-	style.ScrollbarRounding = 9.0f;
-	style.GrabMinSize = 15.0f;
-	style.GrabRounding = 5.0f;
-	style.TabRounding = 5.0f;
-	style.TabBorderSize = 0.0f;
-	style.TabMinWidthForCloseButton = 0.0f;
-	style.ColorButtonPosition = ImGuiDir_Right;
-	style.ButtonTextAlign = ImVec2(0.5f, 0.5f);
-	style.SelectableTextAlign = ImVec2(0.0f, 0.0f);
+	style.WindowRounding = 5.0f;
+	style.FrameRounding = 4.0f;
+	style.GrabRounding = 3.0f;
+	style.PopupRounding = 4.0f;
 
-	// Darkish blue and darkish orange colors
-	style.Colors[ImGuiCol_Text] = ImVec4(1.0f, 1.0f, 1.0f, 1.0f); // White for text
-	style.Colors[ImGuiCol_TextDisabled] = ImVec4(0.7f, 0.7f, 0.7f, 1.0f); // Light gray for disabled text
-	style.Colors[ImGuiCol_WindowBg] = ImVec4(0.1f, 0.1f, 0.2f, 1.0f); // Darkish blue for window background
-	style.Colors[ImGuiCol_ChildBg] = ImVec4(0.1f, 0.1f, 0.2f, 1.0f); // Same darkish blue for child background
-	style.Colors[ImGuiCol_PopupBg] = ImVec4(0.1f, 0.1f, 0.2f, 1.0f); // Darkish blue for popup background
-	style.Colors[ImGuiCol_Border] = ImVec4(0.2f, 0.2f, 0.4f, 1.0f); // Slightly lighter blue for borders
-	style.Colors[ImGuiCol_BorderShadow] = ImVec4(0.0f, 0.0f, 0.0f, 0.0f);
-	style.Colors[ImGuiCol_FrameBg] = ImVec4(0.2f, 0.2f, 0.3f, 1.0f); // Darker blue for frame background
-	style.Colors[ImGuiCol_FrameBgHovered] = ImVec4(0.3f, 0.3f, 0.4f, 1.0f); // Slightly lighter blue for hovered frame background
-	style.Colors[ImGuiCol_FrameBgActive] = ImVec4(0.4f, 0.4f, 0.5f, 1.0f); // Lighter blue for active frame background
-	style.Colors[ImGuiCol_TitleBg] = ImVec4(0.1f, 0.1f, 0.2f, 1.0f); // Darkish blue for title bar background
-	style.Colors[ImGuiCol_TitleBgActive] = ImVec4(0.1f, 0.1f, 0.2f, 1.0f); // Darkish blue for active title bar
-	style.Colors[ImGuiCol_TitleBgCollapsed] = ImVec4(0.2f, 0.2f, 0.2f, 1.0f); // Slightly lighter gray for collapsed title bar
-	style.Colors[ImGuiCol_MenuBarBg] = ImVec4(0.1f, 0.1f, 0.2f, 1.0f); // Darkish blue for menu bar
-	style.Colors[ImGuiCol_ScrollbarBg] = ImVec4(0.2f, 0.2f, 0.3f, 1.0f); // Darker blue for scrollbar background
-	style.Colors[ImGuiCol_ScrollbarGrab] = ImVec4(0.3f, 0.3f, 0.4f, 1.0f); // Lighter blue for scrollbar grab
-	style.Colors[ImGuiCol_ScrollbarGrabHovered] = ImVec4(0.4f, 0.4f, 0.5f, 1.0f); // Even lighter blue for hovered scrollbar grab
-	style.Colors[ImGuiCol_ScrollbarGrabActive] = ImVec4(0.5f, 0.5f, 0.6f, 1.0f); // Lightest blue for active scrollbar grab
-	style.Colors[ImGuiCol_CheckMark] = ImVec4(1.0f, 0.6f, 0.2f, 1.0f); // Darkish orange for check marks
-	style.Colors[ImGuiCol_SliderGrab] = ImVec4(0.5f, 0.5f, 0.6f, 1.0f); // Lighter blue for slider grabs
-	style.Colors[ImGuiCol_SliderGrabActive] = ImVec4(0.6f, 0.6f, 0.7f, 1.0f); // Even lighter blue for active slider grabs
-	style.Colors[ImGuiCol_Button] = ImVec4(0.5f, 0.5f, 0.6f, 1.0f); // Lighter blue for buttons
-	style.Colors[ImGuiCol_ButtonHovered] = ImVec4(0.6f, 0.6f, 0.7f, 1.0f); // Hovered button color
-	style.Colors[ImGuiCol_ButtonActive] = ImVec4(0.7f, 0.7f, 0.8f, 1.0f); // Active button color
-	style.Colors[ImGuiCol_Header] = ImVec4(0.5f, 0.5f, 0.6f, 1.0f); // Lighter blue for headers
-	style.Colors[ImGuiCol_HeaderHovered] = ImVec4(0.6f, 0.6f, 0.7f, 1.0f); // Hovered header color
-	style.Colors[ImGuiCol_HeaderActive] = ImVec4(0.7f, 0.7f, 0.8f, 1.0f); // Active header color
-	style.Colors[ImGuiCol_Separator] = ImVec4(0.5f, 0.5f, 0.6f, 1.0f); // Separator color
-	style.Colors[ImGuiCol_SeparatorHovered] = ImVec4(0.6f, 0.6f, 0.7f, 1.0f); // Hovered separator color
-	style.Colors[ImGuiCol_SeparatorActive] = ImVec4(0.7f, 0.7f, 0.8f, 1.0f); // Active separator color
-	style.Colors[ImGuiCol_ResizeGrip] = ImVec4(0.5f, 0.5f, 0.6f, 1.0f); // Lighter blue for resize grips
-	style.Colors[ImGuiCol_ResizeGripHovered] = ImVec4(0.6f, 0.6f, 0.7f, 1.0f); // Hovered resize grip color
-	style.Colors[ImGuiCol_ResizeGripActive] = ImVec4(0.7f, 0.7f, 0.8f, 1.0f); // Active resize grip color
-	style.Colors[ImGuiCol_Tab] = ImVec4(0.5f, 0.5f, 0.6f, 1.0f); // Lighter blue for tabs
-	style.Colors[ImGuiCol_TabHovered] = ImVec4(0.6f, 0.6f, 0.7f, 1.0f); // Hovered tab color
-	style.Colors[ImGuiCol_TabActive] = ImVec4(0.7f, 0.7f, 0.8f, 1.0f); // Active tab color
-	style.Colors[ImGuiCol_TabUnfocused] = ImVec4(0.2f, 0.2f, 0.2f, 1.0f); // Darker gray for unfocused tabs
-	style.Colors[ImGuiCol_TabUnfocusedActive] = ImVec4(0.3f, 0.3f, 0.3f, 1.0f); // Darker gray for unfocused active tabs
-	style.Colors[ImGuiCol_PlotLines] = ImVec4(0.5f, 0.5f, 0.6f, 1.0f); // Lighter blue for plot lines
-	style.Colors[ImGuiCol_PlotLinesHovered] = ImVec4(0.6f, 0.6f, 0.7f, 1.0f); // Hovered plot lines color
-	style.Colors[ImGuiCol_PlotHistogram] = ImVec4(0.5f, 0.5f, 0.6f, 1.0f); // Lighter blue for histograms
-	style.Colors[ImGuiCol_PlotHistogramHovered] = ImVec4(0.6f, 0.6f, 0.7f, 1.0f); // Hovered histogram color
-	style.Colors[ImGuiCol_TableHeaderBg] = ImVec4(0.2f, 0.2f, 0.2f, 1.0f); // Dark gray for table header background
-	style.Colors[ImGuiCol_TableBorderStrong] = ImVec4(0.2f, 0.2f, 0.3f, 1.0f); // Darker blue for strong table borders
-	style.Colors[ImGuiCol_TableBorderLight] = ImVec4(0.3f, 0.3f, 0.4f, 1.0f); // Lighter blue for light table borders
-	style.Colors[ImGuiCol_TableRowBg] = ImVec4(0.1f, 0.1f, 0.1f, 1.0f); // Dark gray for table rows
-	style.Colors[ImGuiCol_TableRowBgAlt] = ImVec4(0.15f, 0.15f, 0.15f, 1.0f); // Slightly lighter gray for alternate table rows
-	style.Colors[ImGuiCol_TextSelectedBg] = ImVec4(0.5f, 0.5f, 0.6f, 1.0f); // Lighter blue for selected text background
-	style.Colors[ImGuiCol_DragDropTarget] = ImVec4(1.0f, 0.6f, 0.2f, 0.9f); // Darkish orange for drag and drop target
-	style.Colors[ImGuiCol_NavHighlight] = ImVec4(1.0f, 0.6f, 0.2f, 1.0f); // Darkish orange for navigation highlight
-	style.Colors[ImGuiCol_NavWindowingHighlight] = ImVec4(1.0f, 0.6f, 0.2f, 0.7f); // Darkish orange for windowing highlight
-	style.Colors[ImGuiCol_NavWindowingDimBg] = ImVec4(0.5f, 0.5f, 0.6f, 0.2f); // Lighter blue for windowing dim background
-	style.Colors[ImGuiCol_ModalWindowDimBg] = ImVec4(0.5f, 0.5f, 0.6f, 0.35f); // Lighter blue for modal window dim background
+	ImVec4* colors = style.Colors;
+	colors[ImGuiCol_Text] = ImVec4(1.0f, 1.0f, 1.0f, 1.0f);
+	colors[ImGuiCol_WindowBg] = ImVec4(30 / 255.0f, 30 / 255.0f, 30 / 255.0f, 1.0f);
+	colors[ImGuiCol_Border] = ImVec4(80 / 255.0f, 80 / 255.0f, 80 / 255.0f, 1.0f);
+	colors[ImGuiCol_FrameBg] = ImVec4(45 / 255.0f, 45 / 255.0f, 45 / 255.0f, 1.0f);
+	colors[ImGuiCol_FrameBgHovered] = ImVec4(65 / 255.0f, 65 / 255.0f, 65 / 255.0f, 1.0f);
+	colors[ImGuiCol_FrameBgActive] = ImVec4(85 / 255.0f, 85 / 255.0f, 85 / 255.0f, 1.0f);
+	colors[ImGuiCol_TitleBg] = ImVec4(70 / 255.0f, 70 / 255.0f, 70 / 255.0f, 1.0f);
+	colors[ImGuiCol_TitleBgActive] = ImVec4(90 / 255.0f, 90 / 255.0f, 90 / 255.0f, 1.0f);
+	colors[ImGuiCol_Button] = ImVec4(0.0f, 0.5f, 1.0f, 1.0f);
+	colors[ImGuiCol_ButtonHovered] = ImVec4(0.0f, 0.6f, 1.0f, 1.0f);
+	colors[ImGuiCol_ButtonActive] = ImVec4(0.0f, 0.7f, 1.0f, 1.0f);
+	colors[ImGuiCol_CheckMark] = ImVec4(1.0f, 1.0f, 1.0f, 1.0f);
+	colors[ImGuiCol_SliderGrab] = ImVec4(0.0f, 0.5f, 1.0f, 1.0f);
+	colors[ImGuiCol_SliderGrabActive] = ImVec4(0.0f, 0.6f, 1.0f, 1.0f);
+	colors[ImGuiCol_Separator] = ImVec4(80 / 255.0f, 80 / 255.0f, 80 / 255.0f, 1.0f);
+
+	colors[ImGuiCol_Tab] = ImVec4(50 / 255.0f, 50 / 255.0f, 50 / 255.0f, 1.0f);
+	colors[ImGuiCol_TabHovered] = ImVec4(60 / 255.0f, 60 / 255.0f, 60 / 255.0f, 1.0f);
+	colors[ImGuiCol_TabActive] = ImVec4(70 / 255.0f, 70 / 255.0f, 70 / 255.0f, 1.0f);
+	ImGui::StyleColorsDark();
 }
-// totally not chatgpt
 
 static inline void TextCentered(const std::string& text, bool bNewLine = true) {
 	if (bNewLine)
@@ -336,12 +275,8 @@ static inline void TextCentered(const std::string& text, bool bNewLine = true) {
 	float win_width = ImGui::GetWindowSize().x;
 	float text_width = ImGui::CalcTextSize(text.c_str()).x;
 
-	// calculate the indentation that centers the text on one line, relative
-	// to window left, regardless of the `ImGuiStyleVar_WindowPadding` value
 	float text_indentation = (win_width - text_width) * 0.5f;
 
-	// if text is too long to be drawn on one line, `text_indentation` can
-	// become too small or even negative, so we check a minimum indentation
 	float min_indentation = 20.0f;
 	if (text_indentation <= min_indentation) {
 		text_indentation = min_indentation;
@@ -516,6 +451,8 @@ static inline DWORD WINAPI LateGameThread(LPVOID)
 		const float Duration = 10.0f;
 		const float EarlyDuration = Duration;
 		const float DropDelay = 1.0f;
+		const float DropEnd = 11.0f;
+		const float FlightEnd = 11.0f;
 		const int InitialSleepSeconds = 10;
 
 		auto GameMode = Cast<AFortGameModeAthena>(GetWorld()->GetGameMode());
@@ -533,8 +470,23 @@ static inline DWORD WINAPI LateGameThread(LPVOID)
 
 		const FVector ZoneCenterLocation = SafeZoneLocations.at(3);
 		FVector LocationToStartAircraft = ZoneCenterLocation;
-		LocationToStartAircraft.Z += 10000;
-		LocationToStartAircraft.X += -2000;
+		LocationToStartAircraft.Z += 15000;
+		LocationToStartAircraft.X += 2000;
+
+		GET_PLAYLIST(GameState);
+
+		if (CurrentPlaylist)
+		{
+			bool bRespawning = CurrentPlaylist->GetRespawnType() == EAthenaRespawnType::InfiniteRespawn || CurrentPlaylist->GetRespawnType() == EAthenaRespawnType::InfiniteRespawnExceptStorm;
+
+			if (bRespawning == true)
+			{
+				const FVector ZoneCenterLocation = SafeZoneLocations.at(3);
+				FVector LocationToStartAircraft = ZoneCenterLocation;
+				LocationToStartAircraft.Z += 15000;
+				LocationToStartAircraft.X += -6000;
+			}
+		}
 
 		auto GetAircrafts = [&]() -> std::vector<AActor*>
 			{
@@ -619,15 +571,11 @@ static inline DWORD WINAPI LateGameThread(LPVOID)
 			}
 		}
 
-		if (Globals::bStarted == true)
+		if (bStartedBus == true)
 		{
 			std::this_thread::sleep_for(std::chrono::milliseconds(6000));
-			auto GameState = Cast<AFortGameStateAthena>(GetWorld()->GetGameState());
 			GameState->SkipAircraft();
 		}
-
-		GameState->GetGamePhase() = EAthenaGamePhase::SafeZones;
-		GameState->OnRep_GamePhase();
 
 		static auto World_NetDriverOffset = GetWorld()->GetOffset("NetDriver");
 		auto WorldNetDriver = GetWorld()->Get<UNetDriver*>(World_NetDriverOffset);
@@ -650,70 +598,63 @@ static inline DWORD WINAPI LateGameThread(LPVOID)
 			std::mt19937 gen(rd());
 
 			std::vector<const wchar_t*> RifleOptions = {
-				L"/FlipperGameplay/Items/Weapons/CoreAR/WID_Assault_CoreAR_Athena_UC.WID_Assault_CoreAR_Athena_UC",
-				L"/FlipperGameplay/Items/Weapons/RedDotAR/WID_Assault_RedDotAR_Athena_VR.WID_Assault_RedDotAR_Athena_VR",
-				L"/FlipperGameplay/Items/Weapons/CoreAR/WID_Assault_CoreAR_Athena_SR.WID_Assault_CoreAR_Athena_SR",
-				L"/FlipperGameplay/Items/Weapons/RedDotAR/WID_Assault_RedDotAR_Athena_SR.WID_Assault_RedDotAR_Athena_SR",
-				L"/FlipperGameplay/Items/Weapons/CoreAR/WID_Assault_CoreAR_Athena_R.WID_Assault_CoreAR_Athena_R",
-				L"/FlipperGameplay/Items/Weapons/RedDotAR/WID_Assault_RedDotAR_Athena_R.WID_Assault_RedDotAR_Athena_R",
-				L"/FlipperGameplay/Items/Weapons/RedDotAR/WID_Assault_RedDotAR_Athena_UC.WID_Assault_RedDotAR_Athena_UC",
-				L"/FlipperGameplay/Items/Weapons/CoreAR/WID_Assault_CoreAR_Athena_UC.WID_Assault_CoreAR_Athena_UC",
-				L"/FlipperGameplay/Items/Weapons/RedDotAR/WID_Assault_RedDotAR_Athena_VR.WID_Assault_RedDotAR_Athena_VR",
-				L"/FlipperGameplay/Items/Weapons/CoreAR/WID_Assault_CoreAR_Athena_SR.WID_Assault_CoreAR_Athena_SR",
-				L"/FlipperGameplay/Items/Weapons/RedDotAR/WID_Assault_RedDotAR_Athena_SR.WID_Assault_RedDotAR_Athena_SR",
-				L"/FlipperGameplay/Items/Weapons/CoreAR/WID_Assault_CoreAR_Athena_R.WID_Assault_CoreAR_Athena_R",
-				L"/FlipperGameplay/Items/Weapons/RedDotAR/WID_Assault_RedDotAR_Athena_R.WID_Assault_RedDotAR_Athena_R",
-				L"/FlipperGameplay/Items/Weapons/RedDotAR/WID_Assault_RedDotAR_Athena_UC.WID_Assault_RedDotAR_Athena_UC",
-				L"/FlipperGameplay/Items/Weapons/CoreAR/WID_Assault_CoreAR_Athena_UC.WID_Assault_CoreAR_Athena_UC",
-				L"/FlipperGameplay/Items/Weapons/RedDotAR/WID_Assault_RedDotAR_Athena_VR.WID_Assault_RedDotAR_Athena_VR",
-				L"/FlipperGameplay/Items/Weapons/CoreAR/WID_Assault_CoreAR_Athena_SR.WID_Assault_CoreAR_Athena_SR",
-				L"/FlipperGameplay/Items/Weapons/RedDotAR/WID_Assault_RedDotAR_Athena_SR.WID_Assault_RedDotAR_Athena_SR",
-				L"/FlipperGameplay/Items/Weapons/CoreAR/WID_Assault_CoreAR_Athena_R.WID_Assault_CoreAR_Athena_R",
-				L"/FlipperGameplay/Items/Weapons/RedDotAR/WID_Assault_RedDotAR_Athena_R.WID_Assault_RedDotAR_Athena_R",
-				L"/FlipperGameplay/Items/Weapons/RedDotAR/WID_Assault_RedDotAR_Athena_UC.WID_Assault_RedDotAR_Athena_UC",
-				L"/FlipperGameplay/Items/Weapons/RedDotAR/WID_Assault_RedDotAR_Athena_SR.WID_Assault_RedDotAR_Athena_SR",
-				L"/FlipperGameplay/Items/Weapons/CoreAR/WID_Assault_CoreAR_Athena_R.WID_Assault_CoreAR_Athena_R",
-				L"/FlipperGameplay/Items/Weapons/CoreAR/WID_Assault_CoreAR_Athena_UC.WID_Assault_CoreAR_Athena_UC",
+				L"/Game/Athena/Items/Weapons/WID_Assault_AutoHigh_Athena_SR_Ore_T03.WID_Assault_AutoHigh_Athena_SR_Ore_T03",
+				L"/Game/Athena/Items/Weapons/WID_Assault_AutoHigh_Athena_VR_Ore_T03.WID_Assault_AutoHigh_Athena_VR_Ore_T03",
+				L"/Game/Athena/Items/Weapons/WID_Assault_Auto_Athena_R_Ore_T03.WID_Assault_Auto_Athena_R_Ore_T03",
+				L"/Game/Athena/Items/Weapons/WID_Assault_Auto_Athena_UC_Ore_T03.WID_Assault_Auto_Athena_UC_Ore_T03",
+				L"/Game/Athena/Items/Weapons/WID_Assault_Heavy_Athena_UC_Ore_T03.WID_Assault_Heavy_Athena_UC_Ore_T03",
+				L"/Game/Athena/Items/Weapons/WID_Assault_Heavy_Athena_R_Ore_T03.WID_Assault_Heavy_Athena_R_Ore_T03",
+				L"/Game/Athena/Items/Weapons/WID_Assault_Suppressed_Athena_VR_Ore_T03.WID_Assault_Suppressed_Athena_VR_Ore_T03",
+				L"/Game/Athena/Items/Weapons/WID_Assault_Suppressed_Athena_SR_Ore_T03.WID_Assault_Suppressed_Athena_SR_Ore_T03",
+				L"/Game/Athena/Items/Weapons/WID_Assault_AutoHigh_Athena_SR_Ore_T03.WID_Assault_AutoHigh_Athena_SR_Ore_T03",
+				L"/Game/Athena/Items/Weapons/WID_Assault_AutoHigh_Athena_VR_Ore_T03.WID_Assault_AutoHigh_Athena_VR_Ore_T03",
+				L"/Game/Athena/Items/Weapons/WID_Assault_Auto_Athena_R_Ore_T03.WID_Assault_Auto_Athena_R_Ore_T03",
+				L"/Game/Athena/Items/Weapons/WID_Assault_Auto_Athena_UC_Ore_T03.WID_Assault_Auto_Athena_UC_Ore_T03",
+				L"/Game/Athena/Items/Weapons/WID_Assault_Heavy_Athena_UC_Ore_T03.WID_Assault_Heavy_Athena_UC_Ore_T03",
+				L"/Game/Athena/Items/Weapons/WID_Assault_Heavy_Athena_R_Ore_T03.WID_Assault_Heavy_Athena_R_Ore_T03",
+				L"/Game/Athena/Items/Weapons/WID_Assault_Suppressed_Athena_VR_Ore_T03.WID_Assault_Suppressed_Athena_VR_Ore_T03",
+				L"/Game/Athena/Items/Weapons/WID_Assault_Suppressed_Athena_SR_Ore_T03.WID_Assault_Suppressed_Athena_SR_Ore_T03",
+				L"/Game/Athena/Items/Weapons/WID_Assault_Heavy_Athena_R_Ore_T03.WID_Assault_Heavy_Athena_R_Ore_T03",
+				L"/Game/Athena/Items/Weapons/WID_Assault_Auto_Athena_R_Ore_T03.WID_Assault_Auto_Athena_R_Ore_T03",
+				L"/Game/Athena/Items/Weapons/WID_Assault_AutoHigh_Athena_VR_Ore_T03.WID_Assault_AutoHigh_Athena_VR_Ore_T03",
 			};
 
 			std::vector<const wchar_t*> ShotgunOptions = {
-				L"/FlipperGameplay/Items/Weapons/BurstShotgun/WID_Shotgun_CoreBurst_Athena_VR.WID_Shotgun_CoreBurst_Athena_VR",
-				L"/FlipperGameplay/Items/Weapons/DPSShotgun/WID_Shotgun_CoreDPS_Athena_UC.WID_Shotgun_CoreDPS_Athena_UC",
-				L"/FlipperGameplay/Items/Weapons/BurstShotgun/WID_Shotgun_CoreBurst_Athena_UC.WID_Shotgun_CoreBurst_Athena_UC",
-				L"/FlipperGameplay/Items/Weapons/BurstShotgun/WID_Shotgun_CoreBurst_Athena_R.WID_Shotgun_CoreBurst_Athena_R",
-				L"/FlipperGameplay/Items/Weapons/BurstShotgun/WID_Shotgun_CoreBurst_Athena_C.WID_Shotgun_CoreBurst_Athena_C",
-				L"/FlipperGameplay/Items/Weapons/DPSShotgun/WID_Shotgun_CoreDPS_Athena_UC.WID_Shotgun_CoreDPS_Athena_UC",
-				L"/FlipperGameplay/Items/Weapons/DPSShotgun/WID_Shotgun_CoreDPS_Athena_SR.WID_Shotgun_CoreDPS_Athena_SR",
-				L"/FlipperGameplay/Items/Weapons/BurstShotgun/WID_Shotgun_CoreBurst_Athena_VR.WID_Shotgun_CoreBurst_Athena_VR",
-				L"/FlipperGameplay/Items/Weapons/BurstShotgun/WID_Shotgun_CoreBurst_Athena_R.WID_Shotgun_CoreBurst_Athena_R",
-				L"/FlipperGameplay/Items/Weapons/BurstShotgun/WID_Shotgun_CoreBurst_Athena_UC.WID_Shotgun_CoreBurst_Athena_UC",
-				L"/FlipperGameplay/Items/Weapons/BurstShotgun/WID_Shotgun_CoreBurst_Athena_R.WID_Shotgun_CoreBurst_Athena_R",
+				L"/Game/Athena/Items/Weapons/WID_Shotgun_Standard_Athena_SR_Ore_T03.WID_Shotgun_Standard_Athena_SR_Ore_T03",
+				L"/Game/Athena/Items/Weapons/WID_Shotgun_Standard_Athena_VR_Ore_T03.WID_Shotgun_Standard_Athena_VR_Ore_T03",
+				L"/Game/Athena/Items/Weapons/WID_Shotgun_SemiAuto_Athena_R_Ore_T03.WID_Shotgun_SemiAuto_Athena_R_Ore_T03",
+				L"/Game/Athena/Items/Weapons/WID_Shotgun_Standard_Athena_SR_Ore_T03.WID_Shotgun_Standard_Athena_SR_Ore_T03",
+				L"/Game/Athena/Items/Weapons/WID_Shotgun_Standard_Athena_VR_Ore_T03.WID_Shotgun_Standard_Athena_VR_Ore_T03",
+				L"/Game/Athena/Items/Weapons/WID_Shotgun_SemiAuto_Athena_VR_Ore_T03.WID_Shotgun_SemiAuto_Athena_VR_Ore_T03",
+				L"/Game/Athena/Items/Weapons/WID_Shotgun_Standard_Athena_UC_Ore_T03.WID_Shotgun_Standard_Athena_UC_Ore_T03",
+				L"/Game/Athena/Items/Weapons/WID_Shotgun_Standard_Athena_UC_Ore_T03.WID_Shotgun_Standard_Athena_UC_Ore_T03",
+				L"/Game/Athena/Items/Weapons/WID_Shotgun_Standard_Athena_UC_Ore_T03.WID_Shotgun_Standard_Athena_UC_Ore_T03",
 			};
 
 			std::vector<const wchar_t*> SMGOptions = {
-				L"/FlipperGameplay/Items/Weapons/CoreSMG/WID_SMG_CoreSMG_Athena_R.WID_SMG_CoreSMG_Athena_R",
-				L"/FlipperGameplay/Items/Weapons/CoreSniper/WID_Sniper_CoreSniper_Athena_VR.WID_Sniper_CoreSniper_Athena_VR",
-				L"/FlipperGameplay/Items/Weapons/CoreSniper/WID_Sniper_CoreSniper_Athena_UC.WID_Sniper_CoreSniper_Athena_UC",
-				L"/FlipperGameplay/Items/Weapons/CoreSMG/WID_SMG_CoreSMG_Athena_SR.WID_SMG_CoreSMG_Athena_SR",
-				L"/FlipperGameplay/Items/Weapons/CoreSMG/WID_SMG_CoreSMG_Athena_R.WID_SMG_CoreSMG_Athena_R",
-				L"/FlipperGameplay/Items/Weapons/CoreSMG/WID_SMG_CoreSMG_Athena_VR.WID_SMG_CoreSMG_Athena_VR",
-				L"/FlipperGameplay/Items/ShieldGenerator/WID_Athena_ShieldGenerator.WID_Athena_ShieldGenerator",
-				L"/FlipperGameplay/Items/HealSpray/WID_Athena_HealSpray.WID_Athena_HealSpray",
-				L"/ParallelGameplay/Items/WestSausage/WID_WestSausage_Parallel.WID_WestSausage_Parallel",
-				L"/FlipperGameplay/Items/Weapons/CoreSMG/WID_SMG_CoreSMG_Athena_SR.WID_SMG_CoreSMG_Athena_SR",
-				L"/ParallelGameplay/Items/WestSausage/WID_WestSausage_Parallel.WID_WestSausage_Parallel",
-				L"/FlipperGameplay/Items/Weapons/CoreSniper/WID_Sniper_CoreSniper_Athena_VR.WID_Sniper_CoreSniper_Athena_VR",
-				L"/FlipperGameplay/Items/Weapons/CoreSniper/WID_Sniper_CoreSniper_Athena_UC.WID_Sniper_CoreSniper_Athena_UC",
-				L"/ParallelGameplay/Items/WestSausage/WID_WestSausage_Parallel.WID_WestSausage_Parallel",
-				L"/FlipperGameplay/Items/HealSpray/WID_Athena_HealSpray.WID_Athena_HealSpray",
+				L"/Game/Athena/Items/Weapons/WID_Pistol_AutoHeavyPDW_Athena_SR_Ore_T03.WID_Pistol_AutoHeavyPDW_Athena_SR_Ore_T03",
+				L"/Game/Athena/Items/Weapons/WID_Pistol_AutoHeavyPDW_Athena_VR_Ore_T03.WID_Pistol_AutoHeavyPDW_Athena_VR_Ore_T03",
+				L"/Game/Athena/Items/Weapons/WID_Pistol_AutoHeavyPDW_Athena_R_Ore_T03.WID_Pistol_AutoHeavyPDW_Athena_R_Ore_T03",
+				L"/Game/Athena/Items/Weapons/WID_Pistol_AutoHeavySuppressed_Athena_R_Ore_T03.WID_Pistol_AutoHeavySuppressed_Athena_R_Ore_T03",
+				L"/Game/Athena/Items/Weapons/WID_Sniper_BoltAction_Scope_Athena_R_Ore_T03.WID_Sniper_BoltAction_Scope_Athena_R_Ore_T03",
+				L"/Game/Athena/Items/Weapons/WID_Pistol_AutoHeavySuppressed_Athena_UC_Ore_T03.WID_Pistol_AutoHeavySuppressed_Athena_UC_Ore_T03",
+				L"/Game/Athena/Items/Weapons/WID_Pistol_AutoHeavySuppressed_Athena_R_Ore_T03.WID_Pistol_AutoHeavySuppressed_Athena_R_Ore_T03",
+				L"/Game/Athena/Items/Weapons/WID_Pistol_AutoHeavySuppressed_Athena_C_Ore_T02.WID_Pistol_AutoHeavySuppressed_Athena_C_Ore_T02",
+				L"/Game/Athena/Items/Weapons/WID_Pistol_AutoHeavySuppressed_Athena_R_Ore_T03.WID_Pistol_AutoHeavySuppressed_Athena_R_Ore_T03",
+				L"/Game/Athena/Items/Weapons/WID_Sniper_BoltAction_Scope_Athena_R_Ore_T03.WID_Sniper_BoltAction_Scope_Athena_R_Ore_T03",
+				L"/Game/Athena/Items/Weapons/WID_Sniper_Heavy_Athena_VR_Ore_T03.WID_Sniper_Heavy_Athena_VR_Ore_T03",
+				L"/Game/Athena/Items/Weapons/WID_Sniper_Heavy_Athena_SR_Ore_T03.WID_Sniper_Heavy_Athena_SR_Ore_T03",
+				L"/Game/Athena/Items/Weapons/WID_Sniper_NoScope_Athena_R_Ore_T03.WID_Sniper_NoScope_Athena_R_Ore_T03",
+				L"/Game/Athena/Items/Weapons/WID_Sniper_NoScope_Athena_UC_Ore_T03.WID_Sniper_NoScope_Athena_UC_Ore_T03",
+				L"/Game/Athena/Items/Consumables/RiftItem/Athena_Rift_Item.Athena_Rift_Item",
 			};
 
 			std::vector<const wchar_t*> OtherOptions = {
 				L"/Game/Athena/Items/Consumables/ShockwaveGrenade/Athena_ShockGrenade.Athena_ShockGrenade",
-				L"/FlipperGameplay/Items/RejuvenationPotion/Athena_RejuvenationPotion.Athena_RejuvenationPotion",
+				L"/Game/Athena/Items/Consumables/TNT/Athena_TNT.Athena_TNT",
 				L"/Game/Athena/Items/Consumables/KnockGrenade/Athena_KnockGrenade.Athena_KnockGrenade",
 				L"/Game/Athena/Items/Consumables/Grenade/Athena_Grenade.Athena_Grenade",
-				L"/FlipperGameplay/Items/PizzaParty/WID_Athena_PizzaSlice.WID_Athena_PizzaSlice",
+				L"/Game/Athena/Items/Weapons/WID_Hook_Gun_VR_Ore_T03.WID_Hook_Gun_VR_Ore_T03",
 				L"/Game/Athena/Items/Consumables/StickyGrenade/Athena_StickyGrenade.Athena_StickyGrenade",
 			};
 
@@ -721,18 +662,17 @@ static inline DWORD WINAPI LateGameThread(LPVOID)
 				L"/Game/Athena/Items/Consumables/Shields/Athena_Shields.Athena_Shields",
 				L"/Game/Athena/Items/Consumables/ShieldSmall/Athena_ShieldSmall.Athena_ShieldSmall",
 				L"/Game/Athena/Items/Consumables/Medkit/Athena_Medkit.Athena_Medkit",
-				L"/Game/Athena/Items/Consumables/Bandage/Athena_Bandage.Athena_Bandage",
-				L"/FlipperGameplay/Items/PizzaParty/WID_Athena_PizzaSlice.WID_Athena_PizzaSlice",
-				L"/FlipperGameplay/Items/RejuvenationPotion/Athena_RejuvenationPotion.Athena_RejuvenationPotion",
+				L"/Game/Athena/Items/Consumables/Bandage/Athena_Bandage.Athena_Bandage"
+				L"/Game/Athena/Items/Consumables/PurpleStuff/Athena_PurpleStuff.Athena_PurpleStuff",
 			};
 
 			std::vector<const wchar_t*> TrapOptions = {
-				L"",
-				L"",
-				L"",
-				L"",
-				L"",
-				L"",
+				L"/Game/Athena/Items/Traps/TID_PoisonDartTrap_Context.TID_PoisonDartTrap_Context",
+				L"/Game/Athena/Items/Traps/TID_Floor_Player_Launch_Pad_Athena.TID_Floor_Player_Launch_Pad_Athena",
+				L"/Game/Athena/Items/Traps/TID_Floor_Player_Campfire_Athena.TID_Floor_Player_Campfire_Athena",
+				L"/Game/Athena/Items/Traps/TID_Context_BouncePad_Athena.TID_Context_BouncePad_Athena",
+				L"/Game/Athena/Items/Traps/TID_Floor_Player_Launch_Pad_Athena.TID_Floor_Player_Launch_Pad_Athena",
+				L"/Game/Athena/Items/Traps/TID_Context_BouncePad_Athena.TID_Context_BouncePad_Athena",
 			};
 
 			std::uniform_int_distribution<> RifleDist(0, RifleOptions.size() - 1);
@@ -1177,7 +1117,7 @@ static inline void MainUI()
 
 				if (!Globals::wasWebhookSent && Globals::SystemUptime > 5 && Globals::bStartedListening && Globals::bSendWebhook)
 				{
-					std::string roleMention = "<@&1270135502523207843>";
+					std::string roleMention = "<@&1292226030689452104>";
 					UptimeWebHook.send_message(roleMention);
 
 					std::string title = "NAE Server Online";

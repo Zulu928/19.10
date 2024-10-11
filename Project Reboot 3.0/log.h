@@ -52,9 +52,9 @@ inline void InitLogger()
         freopen_s(&stream, "err.txt", "w", stderr);
     }
 
-    SetConsoleTitleA("19.10");
+    SetConsoleTitleA("9.41");
 
-    std::string logName = "19.10.log"; // GenerateLogFileName();
+    std::string logName = "9.41.log"; // GenerateLogFileName();
 
     sinks.emplace_back(std::make_shared<spdlog::sinks::stdout_color_sink_mt>())->set_pattern("[%D-%T] %n: %^%v%$");
     sinks.emplace_back(std::make_shared<spdlog::sinks::basic_file_sink_mt>(logName, true))->set_pattern("[%D-%T] %n: %l: %v");
